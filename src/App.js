@@ -3,7 +3,7 @@ import React from 'react';
 import { Heading } from '@chakra-ui/react';
 import TodoList from './components/TodoList';
 import AddToDo from './components/AddToDo';
-import { VStack, IconButton } from '@chakra-ui/react';
+import { VStack, IconButton, useColorMode } from '@chakra-ui/react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import {useState, useEffect} from 'react';
 
@@ -21,7 +21,7 @@ function App() {
 ];
 
 const [todos, setTodos] = useState(
-  ()=> JSON.parse(localStorage.getItem('todos')) || [] ); //callback function here triggers only on initial render and not when todos re-renders which makes application faster.
+  ()=> JSON.parse(localStorage.getItem('todos')) || [] ); //callback function here triggers only on initial render and not when todos re-renders, which makes application faster.
 
 
   useEffect(()=> {
@@ -38,11 +38,19 @@ function deleteToDos(id) {
 function addToDO(todo){
   setTodos([...todos, todo]);
 }
+
+const { colorMode, toggleColorMode } = useColorMode()
  
   return (
    
       <VStack p={4}>
-          <IconButton icon={ <FaSun/>} isRound='true' size='lg' alignSelf="flex-end"/>
+          <IconButton 
+          icon={ colorMode ==='light'? <FaMoon /> : <FaSun /> } 
+          isRound='true' 
+          size='lg' 
+          alignSelf="flex-end" 
+          onClick={toggleColorMode} />
+
           <Heading 
           mb="8" 
           fontWeight="extrabold" 
