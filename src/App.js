@@ -54,8 +54,8 @@ const { colorMode, toggleColorMode } = useColorMode()
           <Heading 
           mb="8" 
           fontWeight="extrabold" 
-          size="2xl" 
-          bgGradient="linear(to-r, pink.500, pink.300, blue.500)" 
+          size="3xl" 
+          bgGradient="linear(to-r, teal.500, green.300, pink.500)" 
           bgClip="text" >Todo Application
 
           </Heading>
