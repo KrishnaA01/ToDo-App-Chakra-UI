@@ -56,7 +56,7 @@ const { colorMode, toggleColorMode } = useColorMode()
           fontWeight="extrabold" 
           size="3xl" 
           bgGradient="linear(to-r, teal.500, green.300, pink.500)" 
-          bgClip="text" >Todo Application
+          bgClip="text" >Todo App
 
           </Heading>
 

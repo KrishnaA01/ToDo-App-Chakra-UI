@@ -22,7 +22,7 @@ const TodoList = ({ todos, deletetodo }) => {
     divider={<StackDivider />}
     borderColor="gray.200"
     borderWidth="2px"
-    p="4"
+    p="2"
     borderRadius="lg"
     w="100%"
     maxW={{base:'90vw', sm:'80vw', lg:'50vw', xl:'40vw'}}
