@@ -1,20 +1,19 @@
 import React from 'react';
-import { HStack, VStack, Text, IconButton, StackDivider, Spacer } from '@chakra-ui/react';
+import { HStack, VStack, Text, IconButton, StackDivider, Spacer, Badge } from '@chakra-ui/react';
 import { FaTrash } from 'react-icons/fa';
 
 
-const TodoList = () => {
+const TodoList = ({ todos, deletetodo }) => {
 
-    const todos = [
-        {
-            id:1,
-            body: 'get bread',
-        },
-        {
-            id:2,
-            body: 'get butter'
-        },
-    ];
+    if(!todos.length){
+        return(
+            <Badge colorScheme="green" p="4" m="4" borderRadius="lg">
+                No ToDos today, mate!
+            </Badge>
+        )
+    }
+
+    
   return (
     <VStack 
     divider={<StackDivider />}
@@ -31,7 +30,7 @@ const TodoList = () => {
           <HStack key={todo.id}>
               <Text>{todo.body}</Text>
               <Spacer/>
-              <IconButton icon={<FaTrash />} isRound='true' />
+              <IconButton onClick={() => deletetodo(todo.id)}  icon={<FaTrash />} isRound='true' />
           </HStack>
       ))}
     </VStack>
