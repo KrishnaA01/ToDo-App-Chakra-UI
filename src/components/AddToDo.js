@@ -21,8 +21,8 @@ const AddToDo = ({ addToDo }) => {
             id: nanoid(),
             body: content,
         }
-        addToDo(todo);
-        setContent('');
+        addToDo(todo); // addToDO function from App.js is called here, which takes todo parameters
+        setContent(''); // reset inputField or empty it after submitting
     }
 
 
