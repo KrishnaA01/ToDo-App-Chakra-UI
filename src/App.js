@@ -12,11 +12,11 @@ function App() {
   const initialTodos = [
     {
         id:1,
-        body: 'get bread',
+        body: 'do laundry',
     },
     {
         id:2,
-        body: 'get butter'
+        body: 'send email reply'
     },
 ];
 
